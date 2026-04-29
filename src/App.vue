@@ -1,11 +1,20 @@
 <script setup></script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div class="container">
+    <header>
+      <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/list">Lista de Presentes</RouterLink>
+        <a href="https://chat.whatsapp.com/Ji8ugBsbG2sJliP2qIaYVC">
+          Grupo do Whatsapp
+        </a>
+      </nav>
+    </header>
+    <RouterView>
+
+    </RouterView>
+    </div>
 </template>
 
 <style scoped></style>
