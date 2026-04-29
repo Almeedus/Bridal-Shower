@@ -9,12 +9,12 @@ This project replaces traditional invitations with a simple, interactive web exp
 
 > ...
 
-
 ---
 
 ## ✨ Features
 
 ### 📄 Main Page (Invitation)
+
 - Navigation header with:
   - Home
   - Gift List
@@ -26,6 +26,7 @@ This project replaces traditional invitations with a simple, interactive web exp
 - Image carousel of the couple
 
 ### 🎁 Gift List Page
+
 - Displays a list of suggested gifts
 - Interactive selection system:
   - Confirmation before selecting an item
@@ -69,9 +70,10 @@ This frontend consumes an external API for managing the gift list.
 ### Endpoints used:
 
 ```bash
-GET /items        -> Fetch all items  
-PATCH /items/:id  -> Update item status  
+GET /items        -> Fetch all items
+PATCH /items/:id  -> Update item status
 ```
+
 ⚠️ The API is external, built with Python, and connected to a SQL database.
 
 ---
@@ -79,15 +81,19 @@ PATCH /items/:id  -> Update item status
 ### 📁 Project Structure
 
 ```bash
+
 ```
 
 ---
 
 ## 👤 Author
+
 ### Eduardo Almeida
+
 📧 almeedusa@gmail.com
 
---- 
+---
 
 ## 📄 License
+
 This project is for personal use (bridal shower event).
