@@ -10,10 +10,18 @@
             <img :src="InviteImage"/>
         </div>
         <div class="whatsapp-button">
-            <h3>Botão do grupo</h3>
+            <a href="https://chat.whatsapp.com/Ji8ugBsbG2sJliP2qIaYVC">
+                Entre no nosso grupo do Whatsapp
+            </a>
         </div>
         <div class="photo-carousel">
-            <h3>Carrossel de imagens</h3>
+            <div class="track-images">
+                <img :src="InviteImage"/>
+                <img :src="InviteImage"/>
+                <img :src="InviteImage"/>
+                <img :src="InviteImage"/>
+                <img :src="InviteImage"/>
+            </div>
         </div>
         <div class="logo">
             <img :src="LogoImage"/>
