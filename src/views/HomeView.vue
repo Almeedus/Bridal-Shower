@@ -1,7 +1,13 @@
+<script setup>
+    import InviteImage from '../assets/InviteImage.png'
+    import LogoImage from '../assets/LogoImage.jpg'
+</script>
+
+
 <template>
     <div class="container">
         <div class="invite">
-            <h3>Foto convite</h3>
+            <img :src="InviteImage"/>
         </div>
         <div class="whatsapp-button">
             <h3>Botão do grupo</h3>
@@ -10,12 +16,9 @@
             <h3>Carrossel de imagens</h3>
         </div>
         <div class="logo">
-            <h3>Logo</h3>
+            <img :src="LogoImage"/>
         </div>
     </div>
 </template>
-
-<script setup></script>
-
 
 <style scoped></style>

@@ -1,10 +1,12 @@
+<script setup>
+    import LogoImage from '../assets/LogoImage.jpg'
+</script>
+
 <template>
-    <div class="container">
-        <h3>Logo</h3>
+    <div class="logo">
+        <img :src="LogoImage"/>
     </div>
 </template>
-
-<script setup></script>
 
 
 <style scoped></style>
