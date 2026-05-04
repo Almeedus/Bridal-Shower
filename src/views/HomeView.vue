@@ -1,6 +1,6 @@
 <script setup>
     import InviteImage from '../assets/InviteImage.png'
-    import LogoImage from '../assets/LogoImage.jpg'
+    import LogoImage from '../assets/LogoImage.png'
 </script>
 
 
@@ -29,4 +29,7 @@
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>
+
