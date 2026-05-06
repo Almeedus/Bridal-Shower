@@ -8,9 +8,12 @@
     import JogoPrato from '../assets/items/JogoPrato.webp'
     
     function changeStatus(id) {
-        for (const item of items.value){
-            if (item.id === id){
-                item.comprado = true
+        const answer = confirm()
+        if (answer === true) {
+            for (const item of items.value){
+                if (item.id === id){
+                    item.comprado = true
+                }
             }
         }
     }
