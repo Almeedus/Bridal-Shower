@@ -21,10 +21,11 @@ body {
 
 nav {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
     padding: 10px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -32,7 +33,7 @@ nav a {
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
-    padding: 10px;
+    padding: 8px;
 }
 
 .title h1 {
