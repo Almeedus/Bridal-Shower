@@ -74,12 +74,18 @@ nav a {
     width: 100%;
 }
 
+@keyframes slide {
+    from {transform: translateX(0%);}
+    to {transform: translateX(-50.5%);}
+}
+
 .track-images {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
     width: max-content;
+    animation: slide 10s linear infinite;
 }
 
 .track-images img {
@@ -87,3 +93,4 @@ nav a {
     flex-shrink: 0;
     border-radius: 3%;
 }
+

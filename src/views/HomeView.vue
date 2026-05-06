@@ -16,7 +16,12 @@
         </div>
         <div class="photo-carousel">
             <div class="track-images">
+                <img :src="LogoImage"/>
                 <img :src="InviteImage"/>
+                <img :src="InviteImage"/>
+                <img :src="InviteImage"/>
+                <img :src="InviteImage"/>
+                <img :src="LogoImage"/>
                 <img :src="InviteImage"/>
                 <img :src="InviteImage"/>
                 <img :src="InviteImage"/>
