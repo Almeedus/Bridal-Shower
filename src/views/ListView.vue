@@ -1,123 +1,72 @@
 <script setup>
-    import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
-    import LogoImage from '../assets/LogoImage.png'
-    import ListItem from '@/components/ListItem.vue';
+import LogoImage from '../assets/LogoImage.png'
+import ListItem from '@/components/ListItem.vue'
 
-    import JogoCopo from '../assets/items/JogoCopo.webp'
-    import JogoPrato from '../assets/items/JogoPrato.webp'
-    
-    function changeStatus(id) {
-        const answer = confirm("Confirme a escolha do item.")
-        if (answer === true) {
-            for (const item of items.value){
-                if (item.id === id){
-                    item.comprado = true
-                }
-            }
-        }
-    }
-    
-    const items = ref(
-        [
-            {
-                'id': 0,
-                'name': "Jogo de Copos",
-                'image': JogoCopo,
-                'comprado':false
-            },
-            {
-                'id': 1,
-                'name': "Jogo de Prato",
-                'image': JogoPrato,
-                'comprado': false
-            },
-            {
-                'id': 2,
-                'name': "Jogo de Prato",
-                'image': JogoPrato,
-                'comprado': false
-            },
-            {
-                'id': 3,
-                'name': "Jogo de Copos",
-                'image': JogoCopo,
-                'comprado':false
-            },
-            {
-                'id': 4,
-                'name': "Jogo de Copos",
-                'image': JogoCopo,
-                'comprado':false
-            },
-            {
-                'id': 5,
-                'name': "Jogo de Prato",
-                'image': JogoPrato,
-                'comprado': false
-            },
-            {
-                'id': 6,
-                'name': "Jogo de Prato",
-                'image': JogoPrato,
-                'comprado': false
-            },
-            {
-                'id': 7,
-                'name': "Jogo de Copos",
-                'image': JogoCopo,
-                'comprado':false
-            },
-            {
-                'id': 8,
-                'name': "Jogo de Copos",
-                'image': JogoCopo,
-                'comprado':false
-            },
-            {
-                'id': 9,
-                'name': "Jogo de Prato",
-                'image': JogoPrato,
-                'comprado': false
-            },
-            {
-                'id': 10,
-                'name': "Jogo de Prato",
-                'image': JogoPrato,
-                'comprado': false
-            },
-            {
-                'id': 11,
-                'name': "Jogo de Copos",
-                'image': JogoCopo,
-                'comprado':false
-            },
-        ]
+const items = ref([])
+
+async function loadItems() {
+
+    const response = await fetch(
+        'https://bridal-shower-backend-0s12.onrender.com/items'
     )
 
+    const data = await response.json()
 
+    items.value = data
+}
+
+async function changeStatus(id) {
+
+    const answer = confirm('Confirme a escolha do item.')
+
+    if (!answer) {
+        return
+    }
+
+    await fetch(
+        `https://bridal-shower-backend-0s12.onrender.com/items/${id}`,
+        {
+            method: 'PATCH'
+        }
+    )
+
+    await loadItems()
+}
+
+onMounted(() => {
+    loadItems()
+})
 </script>
 
 <template>
     <div class="container">
+
         <div class="title">
             <h1>Lista de Presentes</h1>
         </div>
+
         <div class="gift-list">
-            <ListItem @card-click="changeStatus"
-            v-for="item in items"
-            :id="item.id"
-            :name-item="item.name"
-            :image-item="item.image"
-            :status="item.comprado"
-            :key="item.id"/>
+
+            <ListItem
+                v-for="item in items"
+                :key="item.id"
+                :id="item.id"
+                :name-item="item.name"
+                :image-item="item.image"
+                :status="item.comprado"
+                @card-click="changeStatus(item.id)"
+            />
+
         </div>
+
         <div class="logo">
             <img :src="LogoImage"/>
         </div>
+
     </div>
 </template>
-
 
 <style scoped>
 .gift-list {
