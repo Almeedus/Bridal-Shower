@@ -56,7 +56,7 @@ onMounted(() => {
                 :name-item="item.name"
                 :image-item="item.image"
                 :status="item.comprado"
-                @card-click="changeStatus(item.id)"
+                @card-click="!item.comprado && changeStatus(item.id)"
             />
 
         </div>
